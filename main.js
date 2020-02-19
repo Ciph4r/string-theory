@@ -85,16 +85,17 @@ function onlyVowels(str) {
 
 
 
-onlyLetters = (str) => {
-  let onlyLetters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ'
-  for (let i = 0 ; onlyLetters.length > i ; i ++ ){
-    if (str === onlyLetters[i])
-    return onlyLetters[i]
-  }
-}
+
 
 
 function crazyCase3SonOfCrazyCase(str) {
+  onlyLetters = (str) => {
+    let onlyLetters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ'
+    for (let i = 0 ; onlyLetters.length > i ; i ++ )
+      if (str === onlyLetters[i])
+      return onlyLetters[i]
+  }
+  
   let x = ''
   let count = 1
   for (let i = 0 ; str.length > i ; i++){
