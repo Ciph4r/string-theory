@@ -51,14 +51,15 @@ function crazyCase2ReturnOfCrazyCase(str) {
 }
 
 function titleCase(str) {
-  let x = ''
+  let lc = str.toLowerCase()
+  let x = str[0].toUpperCase()
   let spaceCount = 1
-  for (let i = 0 ; str.length > i ; i++){
-   if (str[i] === ' ' && spaceCount === spaceCount) {
-    x+= str[i+1].toUpperCase() 
-    spaceCount++
-     
-    } else x+= str[i].toLowerCase()
+  for (let i = 1 ; lc.length > i ; i++){
+   if (lc[i] === ' ') {
+    x+= lc[i]
+    i++
+    x+= lc[i].toUpperCase()  
+    } else x+= lc[i]
   }return x
 }
 
@@ -81,8 +82,35 @@ function onlyVowels(str) {
 }
 
 
-function crazyCase3SonOfCrazyCase() {
+
+
+
+onlyLetters = (str) => {
+  let onlyLetters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ'
+  for (let i = 0 ; onlyLetters.length > i ; i ++ ){
+    if (str === onlyLetters[i])
+    return onlyLetters[i]
+  }
 }
+
+
+function crazyCase3SonOfCrazyCase(str) {
+  let x = ''
+  let count = 1
+  for (let i = 0 ; str.length > i ; i++){
+  if (str[i] !== onlyLetters(str[i])) count++
+    if (count === i){
+    count += 2
+    x+= str[i].toUpperCase() 
+  }
+  else x+= str[i].toLowerCase()
+  }return x
+}
+
+
+
+
+
 
 
 module.exports = {
